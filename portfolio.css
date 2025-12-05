@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppin", sans-serif;
+}
+
+body{
+    background: linear-gradient(180deg, #f3f6fb 0% #e9eef6 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.frame {
+ background;rgba(255, 255, 255, 0.7)
+padding: 18px;
+border-radius: 18px;
+box-shadow:0 20px 40px rgba(30, 40, 50, 0.08)
+backdrop-filter: blur(6px)
+}
+
+.portfolio-layout {
+    display: flex;
+    gap: 22px;
+    align-items: stretch;
+    min-width: 320px;
+}
+
+portfolio-list{
+    width: 360px;
+}
+
+.list-header h3{
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: #0f1724;
+}
+
+.list-sub {
+    margin: 0 0 12px 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.works {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 72vh;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.work-card{
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid rgba(20, 30, 50, 0.04);
+    box-shadow: 0, 8px rgba(20, 30, 50, 0.04);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.work-card .thumb {
+    width: 78px;
+    height: 58px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e6f2fb, #f5fbff);
+    flex-shrink: 0;
+    border: 1px solid #eef6fb;
+}
+
+.work-card .thumb img {
+    width: 100%;
+    height: 100%;
+display: block;
+object-fit: cover; /* preserve aspect ratioand cover the thumb */
+    border-radius: 8px;
+}
+
+.work-card .meta h4 {
+    margin: 0;
+    font-size: 13px;
+    color: #0f1724;
+}
+
+.work-card .meta p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(20, 30, 50, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.profile-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    flex: 1 1 420px;
+    box-shadow: 0 12px 28px rgba(20, 30, 50, 0.06);
+    border: 1px solid rgba(20, 30, 50, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-inner {
+    max-width: 520px;
+    text-align: center;
+}
+
+.prfile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+    margin: 0 auto 18px auto;
+    background: linear-gradient(135deg #e6f2fb #dfeffd); /*fallback while image loads or if missing */
+    overflow: hidden; /*crop image to rounded corners*/
+    display: block;
+    border: 1px solid #e6f2fb;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /*keep aspect ratio and fill the square*/
+    object-position: center;
+    border-radius: 0; /*rounded by container*/
+}
+
+/*respmnsive smaller photo on narrow screens */
+@media (max-width: 420px;) {
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.profile-name {
+    margin: 8px 0 8px 0;
+    font-size: 20px;
+    color: #071025;
+}
+
+.about {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn:primary {
+    background: #0077b6;
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(0, 119, 182, 0.14);
+}
+
+.btn:primary:hover {
+    background: #006494;
+}
+
+/*custom minimal scrollbar for works */
+.works::-webkit-scrollbar {
+    width: 10px;
+}
+.works::-webkit-scrollbar-track {
+    background: transparent;
+}
+.works::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #dfe9f5, #cfdff2);
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .portfolio-layout {
+        flex-direction: column-reverse;
+        gap: 16px;
+        width: 100%;
+    }
+    .portfolio-list {
+        width: 100%;
+    }
+    .profile-card {
+        width: 100%;
+    }
+    .works {
+        max-height: 40vh;
+    }
+}
